@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" defer></script>
     <title>Watch or Watched overview</title>
   </head>
   <body>
     <header><p>Currently Watching vs Watched lists</p></header>
-    <main>
+    <main class="mainCont">
       <!-- Div for input of shows -->
-      <div>
-        <form action="submit">
-          <input type="text" name="addShow" id="addShow" />
-        </form>
-      </div>
+      <form action="submit" id="showInput">
+        <input
+          type="text"
+          name="showName"
+          id="showName"
+          placeholder="What's the name of the show?"
+        />
+        <input
+          type="image"
+          name="showImg"
+          id="showImg"
+          placeholder="Imgae Url here"
+        />
+      </form>
       <!-- div to display the js created watchCard -->
+      <div class="watchingCardCont"></div>
+      <!-- Create each of the elements, fetching the info from input, in js to push/append them here -->
+      <!-- div to place Watched shows in -->
     </main>
     <footer></footer>
   </body>
