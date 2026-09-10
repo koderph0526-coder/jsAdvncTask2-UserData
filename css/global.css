@@ -4,5 +4,20 @@
   box-sizing: border-box;
 }
 header {
-  background-color: burlywood;
+  background-color: #c1965e;
+  height: 3rem;
+  padding: 0.7rem;
+}
+header > p {
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
+  font-size: larger;
+  color: #0e0e0e;
+}
+
+body {
+  background-color: #f4dec1;
+  font-family: system-ui, sans-serif;
 }

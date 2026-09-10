@@ -15,6 +15,7 @@
 
 3. Make a seperate list that I can move the stored shows to, meaning I also have to add a "move to watched" button.
 4. Set up a less hardcoded approach that'll allow me to make several lists with the dual function of storing new shows with title and img, as well as moving them to the Watched list. Meaning I also need to remember to give the user the option of naming the list.
+5. Note: css as I go, as th emain focus is js
 
 ## Assigment description
 
