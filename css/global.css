@@ -7,6 +7,7 @@ header {
   background-color: #c1965e;
   height: 3rem;
   padding: 0.7rem;
+  width: 100vw;
 }
 header > p {
   text-align: center;
@@ -20,4 +21,8 @@ header > p {
 body {
   background-color: #f4dec1;
   font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -13,19 +13,28 @@
     <main class="mainCont">
       <!-- Div for input of shows -->
       <form action="submit" id="showInput">
-        <input
-          type="text"
-          name="showName"
-          id="showName"
-          placeholder="What's the name of the show?"
-        />
-        <input
-          type="text"
-          name="showImg"
-          id="showImg"
-          placeholder="Imgae Url here"
-        />
-        <button>Add Show</button>
+        <!-- input for the name of the show -->
+        <label for="seriesName">
+          <input
+            type="text"
+            name="showName"
+            id="showName"
+            placeholder="What's the name of the show?"
+          />
+        </label>
+
+        <!-- input for an image to display with sheris/show -->
+        <label for="seriesImg"
+          ><input
+            type="text"
+            name="showImg"
+            id="showImg"
+            placeholder="Image url here"
+          />
+        </label>
+
+        <button id="submit" class="addShow">Add to Watchlist</button>
+        <!-- Button for adsing show to "Want to watch list"/planner -->
       </form>
       <!-- If time: Adding another form attach to a different type of cards => The To wathc list -->
       <!-- <form action=""></form> -->
