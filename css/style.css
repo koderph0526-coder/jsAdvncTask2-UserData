@@ -9,7 +9,8 @@
 }
 
 #showName,
-#showImg {
+#showImg,
+#showsList {
   width: 15rem;
   padding: 0.5rem;
   border: 1px solid grey;
@@ -17,16 +18,16 @@
 }
 
 .addShow {
-  width: 6rem;
+  width: 10rem;
   background-color: #d9d9fa;
   border: 1px solid rgb(64, 64, 100);
   border-radius: 9px;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
 
 .addShow:hover {
   cursor: pointer;
   background-color: #c7c7fa;
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 2px 2px 6px #c1965e;
 }
