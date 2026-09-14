@@ -57,9 +57,12 @@ function makeLists() {
 }
 makeLists();
 
+// Making a function to sort thrpught the series by names, starting with "a"
 function sortByName() {
   showsArray.map((item) => item.name).filter();
 }
+
+// Make an eventlistener to select/option -> place the function in the eventlister?
 
 // let watchingList;
 // function addToNamedList() {
