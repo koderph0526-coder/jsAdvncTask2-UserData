@@ -8,15 +8,33 @@
 
 ### My plan, step by step:
 
+---> ! Made a shift of plans, while I still want to create this page as an easy way to store progression in shows with different friends;
+
+### Current plan:
+
+1. fix css to each series card, as to display series name, img and total episodes.
+2. use map(), sort(), filter() etc, to make it simple to sort the shows by name and amount of episodes.
+
+- first sort them from high to low -- A-Z
+- Then add an option to sort it the other way.
+
+3. Add a deleted button.
+4. If time; add a fav/starred button and add the option to sort by favs as well.
+
+### Previous plan(Made it to step 2)
+
+(This plan had to be altered as I struggled a lot with local storage logic, possibly due to some technical issues during the lessons...)
+
 1. I will first make a simple list, likely created and appended from js to an html div.
 2. Then get that list to store anime/show names and an img, this is the "Currently watching" list.
 
-- Once it is storing the information I add in the browser in local storage: I will add a remove icon. which purpose is to help delete shows, if wanted, in the browser instead of having to enter application in dev tool. However this will be in backlog priority.
+- Once it is storing the information I add in the browser in local storage: I will add a remove icon. Which purpose is to help delete shows, if wanted, in the browser instead of having to enter application in dev tool. However this will be in backlog priority.
 
 3. Make a seperate list that I can move the stored shows to, meaning I also have to add a "move to watched" button.
 4. Set up a less hardcoded approach that'll allow me to make several lists with the dual function of storing new shows with title and img, as well as moving them to the Watched list. Meaning I also need to remember to give the user the option of naming the list.
-5. Note: css as I go, as th emain focus is js
+5. Note: css as I go, as the main focus is js
 6. I'd also like to add another list option where the user can add shows they plan to start watching.
+7. Add total episodes and episode progression
 
 ## Assigment description
 

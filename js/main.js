@@ -57,7 +57,7 @@ function makeLists() {
 }
 makeLists();
 
-function sortByDate() {
+function sortByName() {
   showsArray.map((item) => item.name).filter();
 }
 
