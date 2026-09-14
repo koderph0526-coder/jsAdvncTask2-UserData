@@ -26,3 +26,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+select {
+  width: 6.5rem;
+}
+
+/* .watchingCardCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid darkred;
+  border-radius: 15px;
+} */

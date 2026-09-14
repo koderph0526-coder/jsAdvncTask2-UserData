@@ -5,11 +5,13 @@
 #showInput {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 1rem;
 }
 
 #showName,
 #showImg,
+#showEp,
 #showsList {
   width: 15rem;
   padding: 0.5rem;
@@ -17,8 +19,15 @@
   border-radius: 10px;
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+}
+
 .addShow {
   width: 10rem;
+  height: 2.5rem;
+  margin-top: 1rem;
   background-color: #d9d9fa;
   border: 1px solid rgb(64, 64, 100);
   border-radius: 9px;
@@ -30,4 +39,28 @@
   background-color: #c7c7fa;
   transform: scale(1.03);
   box-shadow: 2px 2px 6px #c1965e;
+}
+
+.listCard {
+  background-color: #f4dec1;
+  border: 1px dotted red;
+}
+
+.watchingCardCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 900px;
+  margin: 3rem;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+img {
+  max-width: 30%;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
 }

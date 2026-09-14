@@ -15,6 +15,7 @@
       <form action="submit" id="showInput">
         <!-- input for the name of the show -->
         <label for="seriesName">
+          Series/show name
           <input
             type="text"
             name="showName"
@@ -24,8 +25,9 @@
         </label>
 
         <!-- input for an image to display with sheris/show -->
-        <label for="seriesImg"
-          ><input
+        <label for="seriesImg">
+          Image
+          <input
             type="text"
             name="showImg"
             id="showImg"
@@ -33,19 +35,32 @@
           />
         </label>
 
+        <!-- input for number of episodes -->
+        <label for="seriesEps">
+          Episodes
+          <input type="text" id="showEp" placeholder="How many episodes?" />
+        </label>
+
         <!-- letting a user create a named list/container for the shows -->
-        <label for="listName" id="nameOfList">
+        <!-- <label for="listName" id="nameOfList">
           <input
             type="text"
             name="showsList"
             id="showsList"
             placeholder="..name of list/watching with?"
           />
-        </label>
+        </label> -->
 
         <button id="submit" class="addShow">Add to Watchlist</button>
         <!-- Button for adsing show to "Want to watch list"/planner -->
       </form>
+      <!-- Creating a sorting option instead, to focus on finishing the task on time and returning to my idea later -->
+      <select name="selection" id="selection">
+        <!-- <option value="1">Dato/Tid</option> -->
+        <option value="1">Episodes</option>
+        <option value="2">Alfabetisk</option>
+        <!-- <option value="3"></option> -->
+      </select>
       <!-- If time: Adding another form attach to a different type of cards => The To wathc list -->
       <!-- <form action=""></form> -->
       <!-- div to display the js created watchCard -->
