@@ -2,7 +2,7 @@ const mainContainer = document.querySelector("#mainCont");
 const inputForm = document.querySelector("#showInput");
 const showN = document.querySelector("#showName").value;
 const showImg = document.querySelector("#showImg");
-const showEp = document.querySelector("#showEp");
+const showEps = document.querySelector("#showEp");
 const showLiNames = document.querySelector("#showsList");
 const watchingCards = document.querySelector(".watchingCardCont");
 
@@ -42,9 +42,17 @@ function makeLists() {
     h2.append(h2Txt);
     const img = document.createElement("img");
     img.src = e.showImg;
+    const h3 = document.createElement("h3");
+    const h3Txt = document.createTextNode(e.showEp);
+    h3.append(h3Txt);
+    // const favStar = document.createElement("img")
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "❌";
 
     div.appendChild(h2);
     div.appendChild(img);
+    div.appendChild(h3);
+    div.appendChild(deleteBtn);
     watchingCards.appendChild(div);
     watchingCards.classList = "watchingCardCont";
 
@@ -57,10 +65,22 @@ function makeLists() {
 }
 makeLists();
 
-// Making a function to sort thrpught the series by names, starting with "a"
+// Making a function to sort throught the series by names, starting with "a"
 function sortByName() {
-  showsArray.map((item) => item.name).filter();
+  // Testing a code found via google, will need to adjust and test as I go to figure out how it works
+  // showsArray.map((item) => item.name).filter(); --No? Because
+  let storedNames = localStorage.getItem("showName"); //getting the stored data from local storage and somehow this converts it from a string to an array?
+  let nameArr = storedNames ? JSON.parse(storedNames) : []; //According to the documentation: Parsing the JSON string into an array, or starting with an empty array if nothing is stored
+
+  nameArr.sort(); // sorting the array alphabetically? Does sort have that as a built in default? Yes.
+  localStorage.setItem("showName", JSON.stringify(nameArr));
 }
+
+// const optionNames = document.querySelector("#sortByName");
+// optionNames.addEventListener("click", (e) => {
+//   // having this event listener activate the function if all goes to plan
+//   return sortByName(showN);
+// });
 
 // Make an eventlistener to select/option -> place the function in the eventlister?
 
