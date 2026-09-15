@@ -1,10 +1,11 @@
 const mainContainer = document.querySelector("#mainCont");
 const inputForm = document.querySelector("#showInput");
-const showN = document.querySelector("#showName").value;
+const showN = document.querySelector("#showName");
 const showImg = document.querySelector("#showImg");
 const showEps = document.querySelector("#showEp");
 const showLiNames = document.querySelector("#showsList");
 const watchingCards = document.querySelector(".watchingCardCont");
+//loop throught each of these consts with search in vsc taskbar, to see if all the const above are needed
 
 let showsArray = [];
 //checkiing if the local storage array is empty, if it isn't we store the data from showsArray. This is to make certain that we don't overwrite with new input
@@ -25,14 +26,21 @@ inputForm.addEventListener("submit", (e) => {
   const showData = Object.fromEntries(formData.entries());
   console.log(showData); //Just checking that it fetches the data
 
+  let allShowData = {
+    ...showData, //RFuns through all the keys and values and places them in an object
+    id: crypto.randomUUID(), //Creates a random id
+  };
+  console.log(allShowData);
   //Pushing the data/elements from showData to showsArray
-  showsArray.push(showData);
+  showsArray.push(allShowData);
   localStorage.setItem("data", JSON.stringify(showsArray));
+  makeLists();
 });
 
 // Note!! Use filter() to sort throught whether or not a show has already been added to a specific list
 
 function makeLists() {
+  watchingCards.innerHTML = ""; //Refreshing the div to not duplicate content
   showsArray.forEach((e) => {
     const div = document.createElement("div");
     div.className = "listCard";
@@ -42,12 +50,23 @@ function makeLists() {
     h2.append(h2Txt);
     const img = document.createElement("img");
     img.src = e.showImg;
+    const figure = document.createElement("figure");
+    figure.append(img);
+    figure.className = "imgFigure";
     const h3 = document.createElement("h3");
     const h3Txt = document.createTextNode(e.showEp);
     h3.append(h3Txt);
     // const favStar = document.createElement("img")
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "❌";
+
+    console.log("hei");
+    let idV = e.id;
+    deleteBtn.addEventListener("click", (e) => {
+      let filterShows = showsArray.filter((toDelete) => !(toDelete.id == idV));
+      localStorage.setItem("data", JSON.stringify(filterShows));
+      location.reload(); //Forcing reload, as getting the page to refresh once an item was delted with this method did not happen
+    });
 
     div.appendChild(h2);
     div.appendChild(img);
@@ -73,7 +92,7 @@ function sortByName() {
   let nameArr = storedNames ? JSON.parse(storedNames) : []; //According to the documentation: Parsing the JSON string into an array, or starting with an empty array if nothing is stored
 
   nameArr.sort(); // sorting the array alphabetically? Does sort have that as a built in default? Yes.
-  localStorage.setItem("showName", JSON.stringify(nameArr));
+  // localStorage.setItem("showName", JSON.stringify(nameArr));
 }
 
 // const optionNames = document.querySelector("#sortByName");
