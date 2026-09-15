@@ -12,11 +12,11 @@
 
 ### Current plan:
 
-1. fix css to each series card, as to display series name, img and total episodes.
-2. use map(), sort(), filter() etc, to make it simple to sort the shows by name and amount of episodes.
+1. Fix css to each series card, as to display series name, img and total episodes. []
+2. use map(), sort(), filter() etc, to make it simple to sort the shows by name and amount of episodes. []
 
 - first sort them from high to low -- A-Z
-- Then add an option to sort it the other way.
+- Then add an option to sort it the other way. if time that is.
 
 3. Add a deleted button.
 4. If time; add a fav/starred button and add the option to sort by favs as well.

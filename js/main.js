@@ -34,14 +34,15 @@ inputForm.addEventListener("submit", (e) => {
   //Pushing the data/elements from showData to showsArray
   showsArray.push(allShowData);
   localStorage.setItem("data", JSON.stringify(showsArray));
-  makeLists();
+  makeLists(showsArray);
 });
 
 // Note!! Use filter() to sort throught whether or not a show has already been added to a specific list
 
-function makeLists() {
+//Creating the cards that display the different shows
+function makeLists(series) {
   watchingCards.innerHTML = ""; //Refreshing the div to not duplicate content
-  showsArray.forEach((e) => {
+  series.forEach((e) => {
     const div = document.createElement("div");
     div.className = "listCard";
 
@@ -82,18 +83,33 @@ function makeLists() {
     // }; attempted something, may come back to it
   });
 }
-makeLists();
+makeLists(showsArray);
 
 // Making a function to sort throught the series by names, starting with "a"
-function sortByName() {
-  // Testing a code found via google, will need to adjust and test as I go to figure out how it works
-  // showsArray.map((item) => item.name).filter(); --No? Because
-  let storedNames = localStorage.getItem("showName"); //getting the stored data from local storage and somehow this converts it from a string to an array?
-  let nameArr = storedNames ? JSON.parse(storedNames) : []; //According to the documentation: Parsing the JSON string into an array, or starting with an empty array if nothing is stored
+//Fetching the select tag from html
+const selectOption = document.querySelector("#selection");
+selectOption.addEventListener("change", (e) => {
+  let sortedArray = [...showsArray];
+  if (e.target.value == 1) {
+    sortedArray.sort((a, b) => a.showEp - b.showEp);
+  } else if (e.target.value == 2) {
+    sortedArray.sort((a, b) => a.showName.localeCompare(b.showName));
+  } else if (e.target.value == 3) {
+    sortedArray.sort((a, b) => b.showEp - a.showEp);
+  } else if (e.target.value == 4) {
+    sortedArray.sort((a, b) => b.showName.localeCompare(a.showName));
+  }
+  makeLists(sortedArray);
+});
+//{
+//   // Testing a code found via google, will need to adjust and test as I go to figure out how it works
+//   // showsArray.map((item) => item.name).filter(); --No? Because
+//   let storedNames = localStorage.getItem("showName"); //getting the stored data from local storage and somehow this converts it from a string to an array?
+//   let nameArr = storedNames ? JSON.parse(storedNames) : []; //According to the documentation: Parsing the JSON string into an array, or starting with an empty array if nothing is stored
 
-  nameArr.sort(); // sorting the array alphabetically? Does sort have that as a built in default? Yes.
-  // localStorage.setItem("showName", JSON.stringify(nameArr));
-}
+//   nameArr.sort(); // sorting the array alphabetically? Does sort have that as a built in default? Yes.
+//   // localStorage.setItem("showName", JSON.stringify(nameArr));
+// }
 
 // const optionNames = document.querySelector("#sortByName");
 // optionNames.addEventListener("click", (e) => {
