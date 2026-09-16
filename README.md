@@ -20,8 +20,12 @@
 
 3. Add a deleted button.[x] --> Had to cheat a bit here and use aa method suggested by teacher as there was some issues for the document to refresh/load automatically when an divCard/item had been deleted
 4. If time; add a fav/starred button and add the option to sort by favs as well. [] --> Nope, maybe at a later time
-5. Add a seen function, cheap trick tbh: toggle styling to "mark" the card as seen.
-6. bonus if time: add a way to sort shows based on wheter they have been seen or not
+5. Add a "seen function", cheap trick tbh: toggle styling to "mark" the card as seen.
+6. bonus if time: add a way to sort shows based on wheter they have been seen or not. []
+
+- Add class to toggle between, to display the shows that have been watched differently from not watched [x]
+- How to store the change of the toggle as a beenWatched value in js localStorage? []
+- Add the possibility to sort all the shows added by seen or not seen with two options(seen-not seen/not seen - seen) []
 
 ### Previous plan(Made it to step 2)
 

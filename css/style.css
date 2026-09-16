@@ -107,6 +107,7 @@ img {
   width: 100%;
 }
 
+/* Styling for the figure I'm storing the img in to better adjust it's size and position */
 .imgFigure {
   width: 15rem;
   height: 15rem;
