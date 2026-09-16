@@ -21,19 +21,19 @@ header > p {
 body {
   background-color: #f4dec1;
   font-family: system-ui, sans-serif;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-select {
-  width: 6.5rem;
+form {
+  justify-content: center;
+  align-items: center;
 }
 
-/* .watchingCardCont {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid darkred;
-  border-radius: 15px;
-} */
+select {
+  width: 6.5rem;
+  margin-left: 4rem;
+}

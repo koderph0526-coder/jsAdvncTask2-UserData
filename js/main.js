@@ -54,14 +54,24 @@ function makeLists(series) {
     const figure = document.createElement("figure");
     figure.append(img);
     figure.className = "imgFigure";
+    const seenBtn = document.createElement("button");
+    let seenBtnTxt = document.createTextNode("Seen");
+    const seenBtnTxt2 = document.createTextNode("Watch again");
+    seenBtn.append(seenBtnTxt);
+    seenBtn.classList.toggle("watchedBtn");
     const h3 = document.createElement("h3");
-    const h3Txt = document.createTextNode(e.showEp);
+    const h3Txt = document.createTextNode(`Total Episodes: ${e.showEp}`);
     h3.append(h3Txt);
     // const favStar = document.createElement("img")
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "❌";
+    deleteBtn.className = "delBtn";
 
-    console.log("hei");
+    seenBtn.addEventListener("click", (e) => {
+      div.classList.toggle("liCardWatched");
+      seenBtn.classList.toggle("unwatchBtn");
+    });
+
     let idV = e.id;
     deleteBtn.addEventListener("click", (e) => {
       let filterShows = showsArray.filter((toDelete) => !(toDelete.id == idV));
@@ -70,7 +80,8 @@ function makeLists(series) {
     });
 
     div.appendChild(h2);
-    div.appendChild(img);
+    div.appendChild(seenBtn);
+    div.appendChild(figure);
     div.appendChild(h3);
     div.appendChild(deleteBtn);
     watchingCards.appendChild(div);
@@ -93,14 +104,19 @@ selectOption.addEventListener("change", (e) => {
   if (e.target.value == 1) {
     sortedArray.sort((a, b) => a.showEp - b.showEp);
   } else if (e.target.value == 2) {
+    // Sorts the array of shows from a-z
     sortedArray.sort((a, b) => a.showName.localeCompare(b.showName));
   } else if (e.target.value == 3) {
     sortedArray.sort((a, b) => b.showEp - a.showEp);
   } else if (e.target.value == 4) {
+    // Sorts the array of shows from z-a
     sortedArray.sort((a, b) => b.showName.localeCompare(a.showName));
   }
   makeLists(sortedArray);
 });
+
+//else if(e.target.value == 5)
+
 //{
 //   // Testing a code found via google, will need to adjust and test as I go to figure out how it works
 //   // showsArray.map((item) => item.name).filter(); --No? Because

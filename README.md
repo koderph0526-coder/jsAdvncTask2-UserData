@@ -12,14 +12,16 @@
 
 ### Current plan:
 
-1. Fix css to each series card, as to display series name, img and total episodes. []
-2. use map(), sort(), filter() etc, to make it simple to sort the shows by name and amount of episodes. []
+1. Fix css to each series card, as to display series name, img and total episodes. [x]
+2. use map(), sort(), filter() etc, to make it simple to sort the shows by name and amount of episodes. [x]
 
-- first sort them from high to low -- A-Z
-- Then add an option to sort it the other way. if time that is.
+- first sort them from high to low -- A-Z [x]
+- Then add an option to sort it the other way. if time that is. [x]
 
-3. Add a deleted button.
-4. If time; add a fav/starred button and add the option to sort by favs as well.
+3. Add a deleted button.[x] --> Had to cheat a bit here and use aa method suggested by teacher as there was some issues for the document to refresh/load automatically when an divCard/item had been deleted
+4. If time; add a fav/starred button and add the option to sort by favs as well. [] --> Nope, maybe at a later time
+5. Add a seen function, cheap trick tbh: toggle styling to "mark" the card as seen.
+6. bonus if time: add a way to sort shows based on wheter they have been seen or not
 
 ### Previous plan(Made it to step 2)
 

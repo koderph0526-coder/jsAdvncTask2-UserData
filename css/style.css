@@ -1,12 +1,14 @@
 .mainCont {
   margin-top: 2.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 #showInput {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 #showName,
@@ -31,7 +33,7 @@ label {
   background-color: #d9d9fa;
   border: 1px solid rgb(64, 64, 100);
   border-radius: 9px;
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .addShow:hover {
@@ -41,9 +43,22 @@ label {
   box-shadow: 2px 2px 6px #c1965e;
 }
 
+/* Styling that applies to the cards when printed */
+/* Grid container styling */
+.watchingCardCont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* width: 30rem; */
+  margin: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Layout and styles for the cards themselves */
 .listCard {
   background-color: #f9ecda;
-  border: 1px dotted red;
+  border: 2px dotted darkred;
   border-radius: 20px;
   padding: 1.5rem;
   display: flex;
@@ -54,31 +69,65 @@ label {
 
   /* FIX flex og column */
 }
-
-.watchingCardCont {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 40rem;
-  margin: 3rem;
+.liCardWatched {
+  background-color: #d5b88e;
+  border: 2px dotted #7b2b3d;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
-  /* justify-content: center;
-  align-items: center; */
+}
+
+/* Button to help mark a show as seen - styling */
+.watchedBtn {
+  width: 4rem;
+  height: 2rem;
+  background-color: rgb(226, 255, 226);
+  color: rgb(2, 58, 2);
+  border: 2px green solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Same button, but adjusted styling, still clickable to toggle styles */
+.unwatchBtn {
+  width: 3rem;
+  height: 1.8rem;
+  background-color: rgb(208, 208, 208);
+  color: darkslategray;
+  border: 1px darkslategrey;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 img {
   width: 100%;
-  /* max-height: 18rem; */
 }
 
 .imgFigure {
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   object-fit: cover;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* ---> Find a way to make the img uniform in size!*/
+  padding-top: 0.5rem;
+  overflow: hidden; /* ---> Find a way to make the img uniform in size and postion!*/
 }
 
 h2 {
   text-align: center;
+}
+
+.delBtn {
+  position: sticky;
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+
+.delBtn:hover {
+  background-color: #c7c7fa;
+  cursor: pointer;
 }
