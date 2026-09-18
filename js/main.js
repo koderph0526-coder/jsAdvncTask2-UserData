@@ -42,38 +42,48 @@ inputForm.addEventListener("submit", (e) => {
 //Creating the cards that display the different shows
 function makeLists(series) {
   watchingCards.innerHTML = ""; //Refreshing the div to not duplicate content
+  // Having for each make seperate cards for each time sumbit is pressed
   series.forEach((e) => {
+    // Creating the div that will contain our created elements to store the input data and send it to html
     const div = document.createElement("div");
     div.className = "listCard";
 
-    const h2 = document.createElement("h2");
-    const h2Txt = document.createTextNode(e.showName);
-    h2.append(h2Txt);
+    // Creating the elements that stores the input data for each input
+    const h2 = document.createElement("h2"); //Making an h2 for the show titles
+    const h2Txt = document.createTextNode(e.showName); //Creating a textNode and storing the title data from input in it, to push it back to html
+    h2.append(h2Txt); //Pushing the text from the created TextNode into the h2
+
     const img = document.createElement("img");
-    img.src = e.showImg;
-    const figure = document.createElement("figure");
-    figure.append(img);
-    figure.className = "imgFigure";
+    img.src = e.showImg; //Fetching the img that we stored from input
+    const figure = document.createElement("figure"); // Making a figure to containn the img to better style the img file from input
+    figure.append(img); // Now the img is in the figure and ready to be pushed to html, using figure to append
+    figure.className = "imgFigure"; //adding the class from css
+
+    // Created a button to change css for the card as a way to mark it as seen --> Still need to figure out how to store the change and then add a filter option for it
     const seenBtn = document.createElement("button");
     let seenBtnTxt = document.createTextNode("Seen");
-    const seenBtnTxt2 = document.createTextNode("Watch again");
+    // const seenBtnTxt2 = document.createTextNode("Watch again"); --> fix this. Additional button text for when the seenBtn has been clicked, may not be needed...
     seenBtn.append(seenBtnTxt);
     seenBtn.classList.toggle("watchedBtn");
-    const h3 = document.createElement("h3");
-    const h3Txt = document.createTextNode(`Total Episodes: ${e.showEp}`);
+
+    const h3 = document.createElement("h3"); // Creating an h3 for the total of episodes input, could possibly be a <p> instead?
+    const h3Txt = document.createTextNode(`Total Episodes: ${e.showEp}`); //Fetching the stored input data
     h3.append(h3Txt);
-    // const favStar = document.createElement("img")
-    const deleteBtn = document.createElement("button");
+
+    // const favStar = document.createElement("img") --> Add at a later time, remeber to store both unstarred and starred in localStorage
+    const deleteBtn = document.createElement("button"); //Creating a deleted button
     deleteBtn.textContent = "❌";
-    deleteBtn.className = "delBtn";
+    deleteBtn.className = "delBtn"; //Added minor styling
 
+    // Making seenBtn react to click
     seenBtn.addEventListener("click", (e) => {
-      div.classList.toggle("liCardWatched");
-      seenBtn.classList.toggle("unwatchBtn");
-      localStorage.getItemItem(seenBtn);
+      div.classList.toggle("liCardWatched"); //Changing the card css class to, by visual effect, seperate the seen and not seen cards
+      seenBtn.classList.toggle("unwatchBtn"); //also adding a change to the style of the button, may change it further when I can change the text accordingly when the seenBtn is first clicked
+      localStorage.setItemItem(seenBtn); //Attempted storing the change; Perhaps use a similar approach to how the deletBtn is saved to localStorage?
     });
-    localStorage.setItem(seenBtn ==);
+    // localStorage.setItem(seenBtn.change);
 
+    // Adding functionality to the deleteBtn so that it removes the card displaying the show when clicked
     let idV = e.id;
     deleteBtn.addEventListener("click", (e) => {
       let filterShows = showsArray.filter((toDelete) => !(toDelete.id == idV));
@@ -81,13 +91,14 @@ function makeLists(series) {
       location.reload(); //Forcing reload, as getting the page to refresh once an item was delted with this method did not happen
     });
 
+    // Appending the elements to their appropriate positioins
     div.appendChild(h2);
     div.appendChild(seenBtn);
     div.appendChild(figure);
     div.appendChild(h3);
     div.appendChild(deleteBtn);
     watchingCards.appendChild(div);
-    watchingCards.classList = "watchingCardCont";
+    watchingCards.classList = "watchingCardCont"; //Adding the appropriate css to the card itself
 
     // const combinedInputs = {
     //   nameField: showN,
@@ -96,9 +107,9 @@ function makeLists(series) {
     // }; attempted something, may come back to it
   });
 }
-makeLists(showsArray);
+makeLists(showsArray); //Calling the function
 
-// Making a function to sort throught the series by names, starting with "a"
+// Making a function to sort throught the series by names, starting with "a" and also making it sort by amount of episodes if wanted
 //Fetching the select tag from html
 const selectOption = document.querySelector("#selection");
 selectOption.addEventListener("change", (e) => {

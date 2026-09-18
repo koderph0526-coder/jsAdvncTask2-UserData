@@ -1,5 +1,12 @@
 # Assignment on User data (localStorage) - Making a personal Dashboard.
 
+## Last minute note:
+
+- Still needs more work!
+- Tidy Css(both commets and make utility classes to shorten the code), cleanup comments. Sort ReadMe better.
+- While a sorting function has been added for alphabeth and episode amount, I still want to add another for seen and watching as well as adding a function to favourite shows and Note which episodes one is at on each card listed as "watching".
+- However it may be acceptible as proof of concept for now.
+
 ## My Notes:
 
 - As suggested I want to make dashboard for shows(be it regular tv shows or anime, etc), however I want to make it practical tool to keep overview of shows I'm watching with different people.
