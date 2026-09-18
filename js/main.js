@@ -70,7 +70,9 @@ function makeLists(series) {
     seenBtn.addEventListener("click", (e) => {
       div.classList.toggle("liCardWatched");
       seenBtn.classList.toggle("unwatchBtn");
+      localStorage.getItemItem(seenBtn);
     });
+    localStorage.setItem(seenBtn ==);
 
     let idV = e.id;
     deleteBtn.addEventListener("click", (e) => {

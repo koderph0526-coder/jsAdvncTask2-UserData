@@ -2,7 +2,7 @@
 
 ## My Notes:
 
-- As suggested I want to make dashboard for shows(be it regular tv shows or anime), however I want to make it practical tool to keep overview of shows I'm watching with different people.
+- As suggested I want to make dashboard for shows(be it regular tv shows or anime, etc), however I want to make it practical tool to keep overview of shows I'm watching with different people.
 - Say if I'm watching two animes (one ongoing and one that's been in backlog where all episodes are released) with a friend, I want to list said animes, with the possibility to add/move them to a "attached" but yet seperate card that gives an overview to which shows we have finished watching and, if time, a list for shows we'd like to watch.
 - Disclaimer: if I see the need to use names in the task, such as in classnames I will be using fictional names.
 
@@ -26,6 +26,11 @@
 - Add class to toggle between, to display the shows that have been watched differently from not watched [x]
 - How to store the change of the toggle as a beenWatched value in js localStorage? []
 - Add the possibility to sort all the shows added by seen or not seen with two options(seen-not seen/not seen - seen) []
+
+7. Clean up code: remove lines that are commented out, check if any lines serve no purpose and remove if they are not needed, tidy up comments and add explaining comments where they are needed. DRY the code, esepcially the CSS!
+8. #### For future work:
+   -Add a style and sorting for "Want to watch"
+9. Make the different categories(as in "seen", "watching", "want to watch") appear in seperate lists as a default, but can still be sorted alphabetically and by episode number -> breaking the default list system so that it shows everything by sorting method and not by list orginizing. Also: Add another input, perhaps it should be text box(?) placed on each card to be able to make notes for which episode to watch next as to give overview of where in the show you are.
 
 ### Previous plan(Made it to step 2)
 
